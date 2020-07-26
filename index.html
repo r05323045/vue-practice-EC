@@ -90,22 +90,22 @@
                     </div>
                 </div> 
             </main>
-            <pagination :pages="pagination" @emit-pages="getProducts" class="pagination-wrapper" v-show="!cartOpen&&!checkoutOpen"></pagination>
+            <pagination :pages="pagination" @emit-pages="getProducts" class="pagination-wrapper my-3" v-show="!cartOpen&&!checkoutOpen"></pagination>
             <footer class="mt-5 w-100 d-flex justify-content-center">
-                <p>© 2020-2020 vue practice EC · <a style="color: black;" class="fab fa-github" href=""></a></p>
+                <p>© 2020-2020 vue-practice-EC · <a class="fab fa-github" href="https://github.com/r05323045/vue-practice-EC"></a></p>
             </footer>
             <!-- 完成訂單 Modal start -->
-            <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
+            <div class="modal fade" id="orderModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">完成訂單</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                            <h5 class="modal-title">完成訂購</h5>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span>&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <p>恭喜你已完成訂單。</p>
+                        <div class="modal-body text-center">
+                            <p>感謝你的購買，請耐心等候到貨通知</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>

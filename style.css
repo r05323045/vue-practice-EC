@@ -87,11 +87,11 @@ main {
     border-top: 0 none !important;
 }
 .cart-wrapper {
+    height: 100%;
     overflow: visible;
     max-height: none;
     max-width: 1140px;
     background: #ffffff;
-    overflow-x: hidden;
 }
 .td-title {
     max-width: 200px;
@@ -291,6 +291,17 @@ main {
 .popper-description {
     font-size: 10px;
 }
+.modal-content {
+    border: 0 none;
+    border-radius: 10px;
+}
+.modal-content .modal-body {
+    vertical-align: middle;
+    line-height: 72px;
+}
+.modal-content .btn {
+    border-radius: 5px;
+}
 .fa-times,
 .fa-chevron-right {
     color: darkgray;
@@ -316,6 +327,10 @@ footer {
 footer p {
     line-height: 100px;
     vertical-align: middle;
+}
+footer p a {
+    color: black;
+    cursor: pointer;
 }
 
 @media (min-width: 768px) {
