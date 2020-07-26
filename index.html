@@ -167,7 +167,7 @@
                                             <form @submit.prevent="">
                                                 <validation-provider v-slot="{ errors, classes }" rules="required|numeric|min_value:1">
                                                     <input :id="`quantity-input-${item.product.id}`" type="text" class="form-control" v-model.lazy="item.quantity" @change="quantityUpdata(item.product.id, item.quantity)" v-show="item.quantity > 4">
-                                                    <span v-if="errors[0]" class="text-danger">{{ `數量${errors[0].slice(10, errors[0].length)}` }}</span>
+                                                    <span v-if="errors[0]" class="text-danger">{{ `數量${errors[0].slice((item.product.id.length + 16), errors[0].length)}` }}</span>
                                                 </validation-provider>
                                             </form>
                                         </validation-observer>
