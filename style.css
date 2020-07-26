@@ -277,13 +277,13 @@ main {
     margin-right: 0;
 }
 .star .on{
-    background-image: url(/images/star24_on@2x.png)
+    background-image: url('./images/star24_on@2x.png')
 }
 .star .off{
-    background-image: url(/images/star24_off@2x.png)
+    background-image: url('./images/star24_off@2x.png')
 }
 .star .half{
-    background-image: url(/images/star24_half@2x.png)
+    background-image: url('./images/star24_half@2x.png')
 }
 .popper-description {
     font-size: 10px;
