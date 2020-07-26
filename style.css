@@ -1,10 +1,11 @@
 html, body {
     height: 100%;
-    overflow-y: scroll !important;
+    overflow: visible !important;
 }
 .container {
     height: 100%;
     max-width: none;
+    max-height: none;
 }
 .title {
     margin: 0px;
@@ -86,8 +87,8 @@ main {
     border-top: 0 none !important;
 }
 .cart-wrapper {
-    overflow: hidden;
-    height: 100%;
+    overflow: visible;
+    max-height: none;
     max-width: 1140px;
     background: #ffffff;
     overflow-x: hidden;
