@@ -1,0 +1,341 @@
+html, body {
+    height: 100%;
+    overflow-y: initial !important;
+}
+.container {
+    height: 100%;
+    max-width: none;
+}
+.title {
+    margin: 0px;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+}
+.navbar {
+    background-color: #ffffff;
+    height: 80px;
+    border-bottom: 1px solid #a8a8ab;
+
+}
+.navbar-inside {
+    max-width: 1140px;
+}
+.btn-login {
+    margin-right: 30px;
+    border: 1px solid #a8a8ab;
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-size: 14px;
+}
+.shopping-cart-wrapper {
+    cursor: pointer;
+    width: 45px;
+    position: relative;
+}
+.badge-wrapper {
+    top:0;
+    right:0;
+    position: absolute;
+    display: inline-block;
+    background-color: #f16c5d;
+    color: #ffffff;
+    border-radius: 50%;
+    padding: 3px;
+    width: 20px;
+    height: 18px;
+}
+main {
+    max-width: 1140px;
+}
+.back-to-homepage {
+    color: #39393e;
+    border: 1px solid #a8a8ab;
+    padding: 8px
+}
+.table-wrapper {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.clear-cart-wrapper {
+    position: relative;
+}
+.clear-cart {
+    position: absolute;
+    right: 40px;
+    cursor: pointer;
+    color: #2e90b7;
+}
+.router,
+.go-to-cart {
+    width: 100%;
+    cursor: pointer;
+    color: #2e90b7;
+}
+.go-to-cart {
+    width: 120px;
+}
+.clear-cart:hover,
+.router:hover {
+    text-decoration: underline;
+}
+.borderless {
+    border-top: 0 none !important;
+}
+.cart-wrapper {
+    max-width: 1140px;
+    background: #ffffff;
+    overflow-x: hidden;
+}
+.td-title {
+    max-width: 200px;
+}
+.td-img {
+    max-width: 100px;
+}
+.cart-image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+.td-quantity {
+    width: 80px
+}
+.cart-card {
+    width: 300px;
+}
+.list-group-item {
+    border: none;
+}
+.divider {
+    display: block;
+    height: 2px;
+    background-color: #eeeeef;
+    margin-top: 20px;
+
+}
+.category {
+    color: #2e90b7;
+}
+.card-body {
+    height: 180px;
+}
+.card-img-top {
+    height: 120px;
+}
+.card-title, .popper-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #39393e;
+    margin-bottom: 15px;
+}
+.discount-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 2px 0 2px 0;
+    z-index: 5;
+    background: #ee847d;
+    font-weight: 700;
+    font-size: 14px;
+    color: #ffffff;
+    box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.2);
+    text-align: center;
+    padding: 5px 6px;
+    line-height: 1;
+}
+.price {
+    vertical-align: middle;
+    font-weight: 500;
+    font-size: 16px;
+    margin-right: 6px;
+    color: #10567b;
+}
+.original-price {
+    vertical-align: middle;
+    text-decoration: line-through;
+    font-size: 14px;
+    line-height: 20px;
+    color: #a8a8ab;
+}
+.product-popper {
+    width: 300px;
+}
+.popper-wrapper {
+    border-radius: 30%;
+    padding: 15px;
+}
+.popper-badge {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 12px;
+    margin: 3px;
+    padding: 3px 6px;
+    color: #919191;
+}
+.addToCart {
+    color: #ffffff;
+    background-color: #ec5252;
+    text-decoration: none;
+}
+.addToCart:hover, .add-to-cartaddToCart:focus, .addToCart:active:hover {
+    color: #ffffff;
+    background-color: #c93232;
+}
+.goToCheckout,
+.checkout-submit {
+    color: #ffffff;
+    background-color: #10567b;
+    text-decoration: none;
+}
+.goToCheckout:hover, .goToCheckout:focus, .goToCheckout:active:hover,
+.checkout-submit:hover, .checkout-submit:focus, .checkout-submit:active:hover {
+    color: #ffffff;
+    background-color: #092c3f;
+}
+.empty-cart {
+    height: 100%;
+}
+.emptycart-img {
+    width: 300px;
+    height: 300px;
+}
+.first-step {
+    width: 300px;
+    position: relative;
+}
+.now-step-icon {
+    z-index: 999;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px; 
+    background-color: #10567b;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.now-step-text {
+    padding-left: 15px;
+    padding-right: 10px;
+    z-index: 999;
+    background-color: #ffffff;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px; 
+    height: 50px;
+}
+.notnow-step-icon {
+    z-index: 999;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px; 
+    background-color: #919191;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.notnow-step-text {
+    padding-left: 15px;
+    padding-right: 10px;
+    z-index: 999;
+    color: #919191;
+    background-color: #ffffff;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px; 
+    height: 50px;
+}
+.connector-line {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 23px;
+    background-color: #919191;
+    width: 100%;
+    height: 2px;
+    vertical-align: middle;
+}
+.star {
+    font-size: 0;
+}
+.star .star-item{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 3px;
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+}
+.star .star-item:last-child{
+    margin-right: 0;
+}
+.star .on{
+    background-image: url(/images/star24_on@2x.png)
+}
+.star .off{
+    background-image: url(/images/star24_off@2x.png)
+}
+.star .half{
+    background-image: url(/images/star24_half@2x.png)
+}
+.popper-description {
+    font-size: 10px;
+}
+.fa-times,
+.fa-chevron-right {
+    color: darkgray;
+}
+.fa-chevron-left {
+    cursor: pointer;
+    color: #2e90b7;
+}
+.fa-shopping-cart {
+    color: transparent;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: #000;
+}
+.page-item.active .page-link {
+    background-color: #2E90B7;
+    border-color: #2E90B7;
+    color: #ffffff;
+}
+footer {
+    height: 100px;
+    background-color: #f7f7f8;;
+}
+footer p {
+    line-height: 100px;
+    vertical-align: middle;
+}
+
+@media (min-width: 768px) {
+    .card-body {
+        height: 180px;
+    }
+    .card-img-top {
+        height: 180px;
+    }
+    .price-wrapper {
+        position: absolute;
+        bottom: 10px;
+    }
+}
+@media (min-width: 992px) {
+    .card {
+        height: 300px;
+    }
+    .card-img-top {
+        height: 160px;
+    }
+    .price-wrapper {
+        position: absolute;
+        bottom: 10px;
+    }
+}
