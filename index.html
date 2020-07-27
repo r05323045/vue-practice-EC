@@ -32,65 +32,67 @@
                     </div>
                 </nav>
             </header>
-            <div class="cart-wrapper mx-auto" v-show="cartOpen&&!checkoutOpen">
-                <cartloading :active.sync="cartLoading"></cartloading>
-                <shopcart :user="user" ref="shopcart" @loading="loadingEvent" @cart="cartData" @cartloading="cartloadingEvent" @backtohomepage="forceToHome" @gotocheckout="checkoutSwitch"></shopcart>
-            </div>
-            <div class="cart-wrapper mx-auto" v-show="!cartOpen&&checkoutOpen">
-                <checkoutloading :active.sync="checkoutLoading"></checkoutloading>
-                <checkout :user="user" ref="checkout" @backtohomepage="forceToHome" @gotocart="cartSwitch" @gogetcart="goGetCart"></checkout>
-            </div>
-            <main class="mx-auto" v-show="!cartOpen&&!checkoutOpen">
-                <div class="mt-5 mb-2">
-                    <h3 class="title">廚房餐桌</h3>
+            <main>
+                <div class="cart-wrapper mx-auto" v-show="cartOpen&&!checkoutOpen">
+                    <cartloading :active.sync="cartLoading"></cartloading>
+                    <shopcart :user="user" ref="shopcart" @loading="loadingEvent" @cart="cartData" @cartloading="cartloadingEvent" @backtohomepage="forceToHome" @gotocheckout="checkoutSwitch"></shopcart>
                 </div>
-                <div v-for="i in 5">
-                    <div class="card-deck mx-auto" v-if="products.slice((i - 1) * 5, i * 5).length > 0">
-                        <div v-for="item in products.slice((i - 1) * 5, i * 5)" :key="item.id" class="card my-5" :id="item.id" @mouseover="getProduct(item)">
-                            <img :src="item.imageUrl[0]" class="card-img-top">
-                            <div class="discount-badge" v-show="0.85 > item.price/item.origin_price">{{ `${(item.price/item.origin_price).toFixed(1) * 10} 折` }} </div>
-                            <div class="card-body">
-                                <p class="card-title">{{ item.title }}</p>
-                                <div class="price-wrapper">
-                                    <span class="price">{{ item.price | priceFormat }}</span>
-                                    <span class="original-price" v-show="item.origin_price > item.price">{{ item.origin_price | priceFormat }}</span>
-                                </div>
-                            </div>
-                            <b-popover :target="item.id" triggers="hover focus" placement="right" class="product-popper" :ref="`popover-${item.id}`">
-                                <div class="popper-wrapper">
-                                    <div class="popper-title mt-3">
-                                        {{ item.title }}
-                                    </div>
-                                    <span class="btn btn-light popper-badge"> {{ item.category }} </span>
-                                    <div class="popper-content mt-2">
-                                        {{ item.content }}
-                                    </div>
-                                    <div class="star mt-3">
-                                        <span v-for="score in rating()" :class="score" class="star-item"></span>
-                                    </div>
-                                    <div class="popper-price mt-3">
-                                        <span class="price">{{ item.price | priceFormat }}</span>
-                                        <span class="original-price">{{ item.origin_price | priceFormat }}</span>
-                                    </div>
-                                    <div v-if="!cartId.includes(item.id)" :class="{ addToCart: !cartId.includes(item.id), goToCheckout: cartId.includes(item.id) }" class="btn d-flex justify-content-center mt-3 mb-3" @click="clickAddButton(item)">
-                                        <span>放入購物車</span>
-                                    </div>
-                                    <div v-if="cartId.includes(item.id)" :class="{ addToCart: !cartId.includes(item.id), goToCheckout: cartId.includes(item.id) }" class="btn d-flex justify-content-center mt-3 mb-3" @click="cartSwitch">
-                                        <span>立刻結帳</span>
-                                    </div>
-                                    <div v-if="cartId.includes(item.id)" class="popper-description mt-2">
-                                        <popoverloading loader="bars" :active.sync="popoverLoading"></popoverloading>
-                                        {{ item.description }}
-                                    </div>
-                                </div>
-                            </b-popover>
-                        </div>
-                        <div class="card my-5 border-0" v-for="i in 5 - products.slice((i - 1) * 5, i * 5).length">
-                        </div>
+                <div class="cart-wrapper mx-auto" v-show="!cartOpen&&checkoutOpen">
+                    <checkoutloading :active.sync="checkoutLoading"></checkoutloading>
+                    <checkout :user="user" ref="checkout" @backtohomepage="forceToHome" @gotocart="cartSwitch" @gogetcart="goGetCart"></checkout>
+                </div>
+                <div class="homepage-wrapper mx-auto" v-show="!cartOpen&&!checkoutOpen">
+                    <div class="mt-5 mb-2">
+                        <h3 class="title">廚房餐桌</h3>
                     </div>
-                </div> 
+                    <div v-for="i in 5">
+                        <div class="card-deck mx-auto" v-if="products.slice((i - 1) * 5, i * 5).length > 0">
+                            <div v-for="item in products.slice((i - 1) * 5, i * 5)" :key="item.id" class="card my-5" :id="item.id" @mouseover="getProduct(item)">
+                                <img :src="item.imageUrl[0]" class="card-img-top">
+                                <div class="discount-badge" v-show="0.85 > item.price/item.origin_price">{{ `${(item.price/item.origin_price).toFixed(1) * 10} 折` }} </div>
+                                <div class="card-body">
+                                    <p class="card-title">{{ item.title }}</p>
+                                    <div class="price-wrapper">
+                                        <span class="price">{{ item.price | priceFormat }}</span>
+                                        <span class="original-price" v-show="item.origin_price > item.price">{{ item.origin_price | priceFormat }}</span>
+                                    </div>
+                                </div>
+                                <b-popover :target="item.id" triggers="hover focus" placement="right" class="product-popper" :ref="`popover-${item.id}`">
+                                    <div class="popper-wrapper">
+                                        <div class="popper-title mt-3">
+                                            {{ item.title }}
+                                        </div>
+                                        <span class="btn btn-light popper-badge"> {{ item.category }} </span>
+                                        <div class="popper-content mt-2">
+                                            {{ item.content }}
+                                        </div>
+                                        <div class="star mt-3">
+                                            <span v-for="score in rating()" :class="score" class="star-item"></span>
+                                        </div>
+                                        <div class="popper-price mt-3">
+                                            <span class="price">{{ item.price | priceFormat }}</span>
+                                            <span class="original-price">{{ item.origin_price | priceFormat }}</span>
+                                        </div>
+                                        <div v-if="!cartId.includes(item.id)" :class="{ addToCart: !cartId.includes(item.id), goToCheckout: cartId.includes(item.id) }" class="btn d-flex justify-content-center mt-3 mb-3" @click="clickAddButton(item)">
+                                            <span>放入購物車</span>
+                                        </div>
+                                        <div v-if="cartId.includes(item.id)" :class="{ addToCart: !cartId.includes(item.id), goToCheckout: cartId.includes(item.id) }" class="btn d-flex justify-content-center mt-3 mb-3" @click="cartSwitch">
+                                            <span>立刻結帳</span>
+                                        </div>
+                                        <div v-if="cartId.includes(item.id)" class="popper-description mt-2">
+                                            <popoverloading loader="bars" :active.sync="popoverLoading"></popoverloading>
+                                            {{ item.description }}
+                                        </div>
+                                    </div>
+                                </b-popover>
+                            </div>
+                            <div class="card my-5 border-0" v-for="i in 5 - products.slice((i - 1) * 5, i * 5).length">
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <pagination :pages="pagination" @emit-pages="getProducts" class="pagination-wrapper my-3" v-show="!cartOpen&&!checkoutOpen"></pagination>
             </main>
-            <pagination :pages="pagination" @emit-pages="getProducts" class="pagination-wrapper my-3" v-show="!cartOpen&&!checkoutOpen"></pagination>
             <footer class="mt-5 w-100 d-flex justify-content-center">
                 <p>© 2020-2020 vue-practice-EC · <a class="fab fa-github" href="https://github.com/r05323045/vue-practice-EC"></a></p>
             </footer>
