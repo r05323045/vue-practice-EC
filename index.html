@@ -71,7 +71,7 @@
                                         </div>
                                         <div class="popper-price mt-3">
                                             <span class="price">{{ item.price | priceFormat }}</span>
-                                            <span class="original-price">{{ item.origin_price | priceFormat }}</span>
+                                            <span class="original-price" v-show="item.origin_price > item.price">{{ item.origin_price | priceFormat }}</span>
                                         </div>
                                         <div v-if="!cartId.includes(item.id)" :class="{ addToCart: !cartId.includes(item.id), goToCheckout: cartId.includes(item.id) }" class="btn d-flex justify-content-center mt-3 mb-3" @click="clickAddButton(item)">
                                             <span>放入購物車</span>
