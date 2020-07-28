@@ -310,7 +310,7 @@
                             </validation-provider>
                         </div>
                         <div class="form-group">
-                            <validation-provider  v-slot="{ errors, classes }" rules="required|min:8">
+                            <validation-provider  v-slot="{ errors, classes }" rules="required|numeric|min:8">
                                 <label for="tel">電話</label>
                                 <input id="tel" v-model="form.tel" type="tel" class="form-control" :class="classes">
                                 <span v-if="errors[0]" class="text-danger">{{ `電話${errors[0].slice(4, errors[0].length)}` }}</span>
